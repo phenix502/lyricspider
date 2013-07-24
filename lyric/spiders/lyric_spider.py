@@ -12,9 +12,10 @@ class Lyric_Spider(BaseSpider):
 		hxs = HtmlXPathSelector(response)
 		singerlist = hxs.select('//ul/li')
 
-
+		items = []
 		for singer in singerlist:
-			singerName = singer.select('a/text()').extract()
-			singerLink = singer.select('a/@href').extract()
-			print(singerName)
-			print(singerLink)
+			item = LyricItem()
+			item['singerName'] = singer.select('a/text()').extract()
+			item['singerLink'] = singer.select('a/@href').extract()
+			items.append(item)
+		return items
