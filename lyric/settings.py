@@ -11,5 +11,13 @@ BOT_NAME = 'lyric'
 SPIDER_MODULES = ['lyric.spiders']
 NEWSPIDER_MODULE = 'lyric.spiders'
 
+
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "mydb"
+MONGODB_COLLECTION = "song"
+ITEM_PIPELINES = ['lyric.pipelines.LyricPipeline',]
+
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'lyric (+http://www.yourdomain.com)'

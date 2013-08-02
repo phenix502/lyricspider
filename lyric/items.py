@@ -7,6 +7,6 @@ from scrapy.item import Item, Field
 
 class LyricItem(Item):
     # define the fields for your item here like:
-    # name = Field()
     singerName = Field()
-    singerLink = Field()
+    songName = Field()
+    songLyric  = Field()
